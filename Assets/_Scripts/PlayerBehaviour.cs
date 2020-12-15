@@ -1,4 +1,12 @@
-﻿using System.Collections;
+﻿//------------------------------------------
+// Gabriel Villeneuve, 1201212886
+//  Added player being able to recognize
+//------------------------------------------
+
+
+
+
+using System.Collections;
 using System.Collections.Generic;
 using Cinemachine;
 using Unity.Mathematics;
@@ -285,6 +293,10 @@ public class PlayerBehaviour : MonoBehaviour
             transform.SetParent(other.gameObject.transform);
         }
 
+
+        //-----------------------------
+        //Same principle as moving platform
+        //-----------------------------
         if(other.gameObject.CompareTag("Shrinking Platform"))
         {
             other.gameObject.GetComponent<ShrinkingPlatformController>().isActive = true;
@@ -301,6 +313,10 @@ public class PlayerBehaviour : MonoBehaviour
             transform.SetParent(parent);
         }
 
+
+        //-----------------------------
+        //Same principle as moving platform
+        //-----------------------------
         if (other.gameObject.CompareTag("Shrinking Platform"))
         {
             other.gameObject.GetComponent<ShrinkingPlatformController>().isActive = false;
