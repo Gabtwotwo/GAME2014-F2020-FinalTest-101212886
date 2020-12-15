@@ -77,6 +77,7 @@ public class ShrinkingPlatformController : MonoBehaviour
         if (transform.localScale.x > 0.001f || transform.localScale.y > 0.001f)
         {
             transform.localScale = new Vector3(transform.localScale.x * 0.999f, transform.localScale.y * 0.999f, transform.localScale.z);
+
         }
     }
 

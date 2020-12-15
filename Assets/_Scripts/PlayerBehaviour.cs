@@ -15,7 +15,9 @@ public enum ImpulseSounds
     HIT3,
     DIE,
     THROW,
-    GEM
+    GEM,
+    SHRINK,
+    GROW
 }
 
 public class PlayerBehaviour : MonoBehaviour
@@ -286,6 +288,8 @@ public class PlayerBehaviour : MonoBehaviour
         if(other.gameObject.CompareTag("Shrinking Platform"))
         {
             other.gameObject.GetComponent<ShrinkingPlatformController>().isActive = true;
+            sounds[(int)ImpulseSounds.SHRINK].Play();
+
         }
     }
 
@@ -300,6 +304,8 @@ public class PlayerBehaviour : MonoBehaviour
         if (other.gameObject.CompareTag("Shrinking Platform"))
         {
             other.gameObject.GetComponent<ShrinkingPlatformController>().isActive = false;
+            sounds[(int)ImpulseSounds.GROW].Play();
+
         }
     }
 
